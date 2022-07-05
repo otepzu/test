@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    tools:context=".MainActivity">
+
+    <!-- Card view for displaying the -->
+    <!-- Pie chart and details of pie chart -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewGraph"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp">
+
+
+        <!--Linear layout to display pie chart -->
+        <!-- and details of pie chart-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!--Pie chart to display the data-->
+
+            <org.eazegraph.lib.charts.PieChart
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/piechart"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp"
+
+                />
+
+            <!--Creating another linear layout -->
+            <!-- to display pie chart details -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical">
+
+                    <!--View to display the green color icon-->
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="#33ff33" />
+
+                    <!--Text view to display Present Days -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingLeft="10dp"
+                        android:text="Present Days" />
+
+                </LinearLayout>
+
+                <!--Linear layout to display Absents Day-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp">
+
+                    <!--View to display the red color icon-->
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="#ff0000" />
+
+                    <!--Text view to display absent text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingLeft="10dp"
+                        android:text="Absent Days" />
+
+                </LinearLayout>
+
+                <!--Linear layout to display late-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp">
+
+                    <!--View to display the yellow color icon-->
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="#ffff00" />
+
+                    <!--Text view to display C++ text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:paddingLeft="10dp"
+                        android:text="Late" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- Another Card view for displaying -->
+    <!-- Use of Attendance Sheet -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_below="@+id/cardViewGraph"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/details">
+
+        <!--Relative layout to display -->
+        <!-- Attendance Sheet -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Text view to use of -->
+            <!-- Attendance Sheet text-->
+
+            <!--View to display the line-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Attendance Sheet"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <!--Text view to display Present Days -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Present Days"
+                    android:textSize="18sp"/>
+
+                <!--Text view to display the -->
+                <!-- percentage of Attendance Sheet -->
+                <!-- used. For now default set to 0-->
+                <TextView
+                    android:id="@+id/tvR"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="sans-serif-light"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textColor="#33ff33"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <!--View to display the line-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Absent Days"
+                    android:textSize="18sp"/>
+
+                <!--Text view to display the percentage -->
+                <!-- of programming language used. -->
+                <!-- For now default set to 0-->
+
+                <TextView
+                    android:id="@+id/tvPython"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="sans-serif-light"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textColor="#ff0000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Late"
+                    android:textSize="18sp"/>
+
+                <!--Text view to display the percentage -->
+                <!-- of programming language used. -->
+                <!-- For now default set to 0-->
+                <TextView
+                    android:id="@+id/tvCPP"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="sans-serif-light"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textColor="#ffff00"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="EXIT" />
+
+</RelativeLayout>
